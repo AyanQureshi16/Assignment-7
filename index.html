@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota India - Let's Go Places</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 90vh;
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .car-card {
+            transition: all 0.3s ease;
+        }
+        
+        .car-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .toyota-red {
+            background-color: #EB0A1E;
+        }
+        
+        .toyota-red-text {
+            color: #EB0A1E;
+        }
+        
+        .navbar-scroll {
+            background-color: rgba(0, 0, 0, 1);
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 bg-black transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="https://www.toyota.co.jp/img/common/global-header/logo.png" alt="Toyota Logo" class="h-10">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-white">
+                    <a href="#home" class="hover:text-red-500 transition duration-200">Home</a>
+                    <a href="#vehicles" class="hover:text-red-500 transition duration-200">Vehicles</a>
+                    <a href="#why-toyota" class="hover:text-red-500 transition duration-200">Why Toyota</a>
+                    <a href="#about" class="hover:text-red-500 transition duration-200">About</a>
+                    <a href="#contact" class="hover:text-red-500 transition duration-200">Contact</a>
+                    <div class="relative group">
+                        <button class="hover:text-red-500 transition duration-200 flex items-center">
+                            More <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white text-black min-w-max shadow-lg rounded-md mt-2 z-50">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Test Drives</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Find a Dealer</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Finance Options</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 text-white">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block px-2 py-2 hover:bg-gray-800">Home</a>
+                <a href="#vehicles" class="block px-2 py-2 hover:bg-gray-800">Vehicles</a>
+                <a href="#why-toyota" class="block px-2 py-2 hover:bg-gray-800">Why Toyota</a>
+                <a href="#about" class="block px-2 py-2 hover:bg-gray-800">About</a>
+                <a href="#contact" class="block px-2 py-2 hover:bg-gray-800">Contact</a>
+                <div class="border-t border-gray-700 mt-2 pt-2">
+                    <p class="px-2 py-1 text-gray-400">More Options</p>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-800">Test Drives</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-800">Find a Dealer</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-800">Finance Options</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Let's Go Places</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Experience the thrill of driving with Toyota's latest models</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#vehicles" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-full transition duration-200">Explore Vehicles</a>
+                <a href="#" class="bg-transparent hover:bg-white hover:text-black text-white border border-white font-semibold py-3 px-8 rounded-full transition duration-200">Book a Test Drive</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Models Section -->
+    <section id="vehicles" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">Our Latest Toyota Models</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Car Card 1 -->
+                <div class="car-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1636849955156-0a1d5c8b2658?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Toyota Land Cruiser" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-2 py-1 rounded text-sm font-bold">NEW</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Toyota Land Cruiser</h3>
+                        <p class="text-gray-600 mb-4">Legendary off-road capability meets premium luxury.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">₹1.50 Cr*</span>
+                            <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition duration-200">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car Card 2 -->
+                <div class="car-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Toyota Camry" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-2 py-1 rounded text-sm font-bold">HYBRID</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Toyota Camry</h3>
+                        <p class="text-gray-600 mb-4">Sophisticated hybrid sedan with premium features and comfort.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">₹46.17 Lakh*</span>
+                            <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition duration-200">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car Card 3 -->
+                <div class="car-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1555626906-fc1ff7ffa4b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" alt="Toyota Hilux" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-2 py-1 rounded text-sm font-bold">ADVENTURE</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Toyota Hilux</h3>
+                        <p class="text-gray-600 mb-4">Unstoppable pickup truck built for extreme conditions.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">₹30.40 Lakh*</span>
+                            <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition duration-200">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-red-600 font-semibold hover:text-red-800 transition duration-200">
+                    View All Models <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Toyota Section -->
+    <section id="why-toyota" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">Why Choose Toyota</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center px-4">
+                    <div class="flex justify-center mb-4">
+                        <div class="bg-red-100 rounded-full p-4">
+                            <i class="fas fa-shield-alt text-red-600 text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Built to Last</h3>
+                    <p class="text-gray-600">Toyota vehicles are engineered for durability and reliability you can trust, mile after mile.</p>
+                </div>
+                
+                <div class="text-center px-4">
+                    <div class="flex justify-center mb-4">
+                        <div class="bg-red-100 rounded-full p-4">
+                            <i class="fas fa-leaf text-red-600 text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Eco-Friendly Options</h3>
+                    <p class="text-gray-600">From hybrids to fuel-efficient engines, we're committed to sustainable mobility.</p>
+                </div>
+                
+                <div class="text-center px-4">
+                    <div class="flex justify-center mb-4">
+                        <div class="bg-red-100 rounded-full p-4">
+                            <i class="fas fa-headset text-red-600 text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Exceptional Service</h3>
+                    <p class="text-gray-600">Our nationwide network of dealers provides unmatched customer service and support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Hybrid Technology Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl font-bold mb-6">Toyota Hybrid Technology</h2>
+                    <p class="text-gray-600 mb-4">Pioneers in hybrid technology, Toyota leads the way in eco-friendly mobility without compromising performance.</p>
+                    <p class="text-gray-600 mb-6">Our hybrid vehicles combine a petrol engine with an electric motor to deliver exceptional fuel efficiency, lower emissions, and a smooth driving experience.</p>
+                    <a href="#" class="inline-flex items-center text-red-600 font-semibold hover:text-red-800 transition duration-200">
+                        Learn About Hybrid Technology <i class="fas fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="lg:w-1/2 bg-gray-100 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1182&q=80" alt="Toyota Hybrid Technology" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">What Our Customers Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Rahul Sharma</h4>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"My Toyota Fortuner has been with me for 5 years now and it's never let me down. The after-sales service is exceptional - truly a premium experience."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Priya Patel</h4>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Upgraded to the Innova Crysta last year and it's been fantastic for our family trips. Spacious, comfortable and so reliable. Toyota never disappoints!"</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Amit Desai</h4>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The fuel efficiency of my Toyota Urban Cruiser is outstanding. Great for city commutes and weekend getaways. Perfect combination of style and practicality."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Find a Dealer Section -->
+    <section class="py-16 bg-red-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Ready to Experience Toyota?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Visit your nearest Toyota dealer for a test drive and explore our latest models</p>
+            <a href="#" class="inline-block bg-white text-red-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-200 mb-4">
+                Find a Dealer
+            </a>
+            <p class="text-sm">Or call us at <a href="tel:+18004298682" class="underline">1800-425-6666</a></p>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">About Toyota India</h2>
+            
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <p class="text-gray-600 mb-4">Toyota Kirloskar Motor Pvt Ltd (TKM) is a joint venture between Toyota Motor Corporation (Toyota), Japan's largest automobile company, and the Kirloskar Group, India's leading engineering conglomerate. Since 1997, we've been setting benchmarks in India's automotive industry.</p>
+                    <p class="text-gray-600 mb-6">With manufacturing plants in Bidadi, Karnataka, Toyota India produces a range of vehicles from premium sedans to powerful SUVs and MUVs, all built with Toyota's legendary quality and reliability.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-bold mb-1 text-red-600">25+</div>
+                            <div class="text-gray-600">Years in India</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-bold mb-1 text-red-600">300+</div>
+                            <div class="text-gray-600">Dealerships</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-bold mb-1 text-red-600">1M+</div>
+                            <div class="text-gray-600">Happy Customers</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-bold mb-1 text-red-600">5</div>
+                            <div class="text-gray-600">Manufacturing Plants</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1551831476-7fbc8f6b8d9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Toyota Factory" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+            
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 mb-1">Subject</label>
+                            <select id="subject" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-500">
+                                <option value="">Select a subject</option>
+                                <option value="sales">Sales Inquiry</option>
+                                <option value="service">Service Inquiry</option>
+                                <option value="test-drive">Test Drive</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded transition duration-200 w-full">Send Message</button>
+                    </form>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold mb-4">Toyota India Headquarters</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-600 mt-1 mr-3"></i>
+                                <span>Toyota Kirloskar Motor Pvt. Ltd., Bidadi Industrial Area, Ramanagara District, Karnataka - 562109</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone-alt text-red-600 mr-3"></i>
+                                <span>1800-425-6666 (Toll Free)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-red-600 mr-3"></i>
+                                <span>customer.support@toyota-india.com</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-bold mb-3">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition duration-200">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition duration-200">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition duration-200">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition duration-200">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition duration-200">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-bold mb-3">Business Hours</h4>
+                            <div class="space-y-1 text-gray-600">
+                                <div class="flex justify-between">
+                                    <span>Monday - Friday</span>
+                                    <span>9:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Saturday</span>
+                                    <span>9:00 AM - 2:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Sunday</span>
+                                    <span>Closed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Vehicles</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">All Vehicles</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">SUVs</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">MPVs</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Sedans</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Hybrids</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Shopping Tools</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Build & Price</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Finance Options</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Trade-In Value</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Brochures</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Compare Vehicles</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Owners</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">My Toyota</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Service & Maintenance</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Warranty</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Recall Information</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Toyota Genuine Parts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">About Toyota</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Our Company</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Careers</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Sustainability</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Newsroom</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition duration-200">Investor Relations</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <img src="https://www.toyota.co.jp/img/common/global-header/logo.png" alt="Toyota Logo" class="h-8">
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
+                        <a href="#" class="hover:text-red-500 transition duration-200">Privacy Policy</a>
+                        <a href="#" class="hover:text-red-500 transition duration-200">Terms of Use</a>
+                        <a href="#" class="hover:text-red-500 transition duration-200">Cookie Policy</a>
+                        <a href="#" class="hover:text-red-500 transition duration-200">Sitemap</a>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-sm text-gray-500">
+                    <p>© 2023 Toyota Kirloskar Motor Private Limited. All rights reserved.</p>
+                    <p class="mt-2">*All prices mentioned are ex-showroom prices in New Delhi. Images shown are for illustration purposes only. Actual product may vary.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition duration-200 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-scroll');
+            } else {
+                navbar.classList.remove('navbar-scroll');
+            }
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    <script>
+        alert("Welcome To Car Dealer Website")
+    </script>
+</body>
+</html>
